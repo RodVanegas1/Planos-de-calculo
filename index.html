@@ -1,6 +1,31 @@
 <!doctype html>
 <html lang="es">
 <head>
+<script id="PA_INIT_SCROLL_TOP">
+/* Al entrar al sitio, comenzar siempre desde la portada.
+   Evita que el navegador restaure la posición anterior o un ancla antigua.
+   Los enlaces internos siguen funcionando normalmente después de cargar. */
+(function () {
+  try {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  } catch (e) {}
+
+  function startAtHome() {
+    var root = document.documentElement;
+    var previousBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    requestAnimationFrame(function () {
+      window.scrollTo(0, 0);
+      root.style.scrollBehavior = previousBehavior;
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', startAtHome, { once: true });
+  window.addEventListener('pageshow', startAtHome);
+})();
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#102c50">

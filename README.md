@@ -47,3 +47,6 @@ Sitio web estático preparado para GitHub Pages. No necesita Node, npm ni un pro
 
 - `documentos/Informe-Avance2-Parque-Aurora.pdf`
 - `documentos/Calculo-de-Volumenes-Parque-Aurora.pdf`
+## Inicio del sitio
+
+La portada se abre siempre desde el comienzo, aunque el navegador haya guardado una posición de desplazamiento anterior o la URL contenga un ancla antigua. Desde la portada se puede bajar por las secciones o usar la navegación superior para saltar al plano, las láminas, la maqueta 3D y los datos.
